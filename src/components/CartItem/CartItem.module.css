@@ -1,0 +1,17 @@
+.cartItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px 0;
+}
+
+.cartItem img {
+	margin-right: auto;
+	margin-left: 10px;
+}
+
+.deleteLine,
+.deleteFill {
+	font-size: 1.3em;
+	cursor: pointer;
+}

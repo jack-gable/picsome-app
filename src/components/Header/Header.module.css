@@ -1,0 +1,21 @@
+.shoppingCartLine,
+.shoppingCartFill {
+	font-size: 25px;
+}
+
+.shoppingCartFill:hover,
+.shoppingCartLine:hover,
+.heartLine:hover {
+	transform: scale(1.2);
+}
+
+.heartLine,
+.heartFill {
+	font-size: 25px;
+	color: white;
+}
+
+.heartButton {
+	background: none;
+	border: none;
+}

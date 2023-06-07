@@ -1,0 +1,35 @@
+.cartPage {
+	padding: 10px;
+}
+
+.cartPage > h1 {
+	text-align: center;
+}
+
+.cartPage .totalCost {
+	text-align: right;
+	font-size: 1.3em;
+}
+
+.cartPage div.orderButton {
+	display: flex;
+	justify-content: center;
+}
+
+div.orderButton > button {
+	border-color: var(--black);
+	border-radius: 10px;
+	width: 40%;
+	height: 40px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	margin-bottom: 10px;
+}
+
+div.orderButton > button:focus {
+	outline: none;
+}
+
+div.orderButton > button:disabled {
+	border-color: lightgray;
+}

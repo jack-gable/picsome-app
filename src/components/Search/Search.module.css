@@ -1,0 +1,31 @@
+.search {
+	opacity: 0.85;
+	border-radius: 25px;
+	border: 1px solid var(--black);
+	width: 400px;
+	height: 30px;
+	padding-left: 10px;
+}
+
+.searchContainer {
+	display: flex;
+	column-gap: 5px;
+}
+
+.searchLine {
+	background: none;
+	border: none;
+	font-size: 20px;
+}
+
+.searchLine:hover,
+.searchLine:focus {
+	transform: scale(1.2);
+}
+
+.searchSelect {
+	opacity: 0.85;
+	align-self: center;
+	border: 1px solid var(--black);
+	border-radius: 5px;
+}
