@@ -1,6 +1,5 @@
 import React from "react";
 import { createApi } from "unsplash-js";
-import useLocalStorage from "./hooks/useLocalStorage";
 
 const API_KEY = "QMxJuJcyMlBjJWFASttOjcM_kkdQYZNvZ9z6Ky4jfas";
 const PhotoContext = React.createContext();
@@ -8,10 +7,8 @@ const PhotoContext = React.createContext();
 function PhotosProvider({ children }) {
 	const [allPhotos, setAllPhotos] = React.useState([]);
 	const [cartItems, setCartItems] = React.useState([]);
-	const [favorites, setFavorites] = useLocalStorage("favorites", []);
 	const [searchTerm, setSearchTerm] = React.useState("");
 	const [searchSize, setSearchSize] = React.useState(25);
-	const [openFavorites, setOpenFavorites] = React.useState(false);
 
 	const api = createApi({
 		accessKey: API_KEY,
@@ -23,8 +20,6 @@ function PhotosProvider({ children }) {
 		try {
 			const res = await api.search.getPhotos({
 				query: searchTerm,
-				page: Math.floor(Math.random() * 10),
-				per_page: searchSize,
 			});
 			setAllPhotos(res.response.results);
 		} catch (err) {
@@ -33,19 +28,7 @@ function PhotosProvider({ children }) {
 
 		setSearchTerm("");
 	};
-
-	function addToFavorites(newItem) {
-		setFavorites((prevItems) => [...prevItems, newItem]);
-	}
-
-	function removeFromFavorites(id) {
-		setFavorites((prevItems) => prevItems.filter((item) => item.id !== id));
-	}
-
-	function emptyFavorites() {
-		setFavorites([]);
-	}
-
+	//TODO: switch to json of data of products instead of unsplash api
 	function addToCart(newItem) {
 		setCartItems((prevItems) => [...prevItems, newItem]);
 	}
@@ -65,12 +48,6 @@ function PhotosProvider({ children }) {
 				cartItems,
 				searchTerm,
 				searchSize,
-				favorites,
-				openFavorites,
-				setOpenFavorites,
-				addToFavorites,
-				removeFromFavorites,
-				emptyFavorites,
 				addToCart,
 				removeFromCart,
 				emptyCart,

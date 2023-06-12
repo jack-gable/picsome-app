@@ -1,23 +1,12 @@
 import React from "react";
 import { PhotoContext } from "../../PhotosProvider";
-import {
-	RiHeart2Fill,
-	RiHeart2Line,
-	RiShoppingCart2Fill,
-	RiAddCircleLine,
-} from "react-icons/ri";
+import { RiShoppingCart2Fill, RiAddCircleLine } from "react-icons/ri";
 import styles from "./Image.module.css";
 
 function Image({ className, img }) {
 	const [hovered, setHovered] = React.useState(false);
-	const {
-		favorites,
-		addToFavorites,
-		removeFromFavorites,
-		addToCart,
-		cartItems,
-		removeFromCart,
-	} = React.useContext(PhotoContext);
+	const { addToCart, cartItems, removeFromCart } =
+		React.useContext(PhotoContext);
 
 	const enter = () => {
 		setHovered(true);
@@ -26,29 +15,6 @@ function Image({ className, img }) {
 	const leave = () => {
 		setHovered(false);
 	};
-
-	function heartIcon() {
-		const alreadyInFavorites = favorites.some((item) => item.id === img.id);
-		if (alreadyInFavorites) {
-			return (
-				<RiHeart2Fill
-					onClick={() => {
-						removeFromFavorites(img.id);
-					}}
-					className={`${styles.heartFill} ${styles.favorite}`}
-				/>
-			);
-		} else if (hovered) {
-			return (
-				<RiHeart2Line
-					onClick={() => {
-						addToFavorites(img);
-					}}
-					className={`${styles.favorite}`}
-				/>
-			);
-		}
-	}
 
 	function cartIcon() {
 		const alreadyInCart = cartItems.some((item) => item.id === img.id);
@@ -88,7 +54,6 @@ function Image({ className, img }) {
 			>
 				{img.user.name}
 			</a>
-			{heartIcon()}
 			{cartIcon()}
 		</div>
 	);

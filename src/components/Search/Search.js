@@ -9,19 +9,13 @@ function Search() {
 	return (
 		<form onSubmit={searchPics}>
 			<div className={`${styles.searchContainer}`}>
-				<input
-					className={`${styles.search}`}
-					value={searchTerm}
-					onChange={(event) => setSearchTerm(event.target.value)}
-					placeholder="i.e. cats"
-				/>
 				<select
 					className={`${styles.searchSelect}`}
-					value={searchSize}
-					onChange={(event) => setSearchSize(event.target.value)}
+					value={searchTerm}
+					onChange={(event) => setSearchTerm(event.target.value)}
 				>
-					<option value={25}>25</option>
-					<option value={50}>50</option>
+					<option value={"shoes"}>Shoes</option>
+					<option value={""}>50</option>
 					<option value={100}>100</option>
 				</select>
 				<button className={`${styles.searchLine}`} type="submit">
@@ -33,3 +27,5 @@ function Search() {
 }
 
 export default Search;
+
+//TODO: switch search select to have products categories and add filter for price and stars

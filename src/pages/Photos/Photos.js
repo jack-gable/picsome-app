@@ -11,11 +11,7 @@ function Photos() {
 	));
 	return (
 		<>
-			{allPhotos.length === 0 ? (
-				<p className={`${styles.text}`}>Search for some cool pics...</p>
-			) : (
-				<main className={`${styles.photos}`}>{imageElements}</main>
-			)}
+			<main className={`${styles.photos}`}>{imageElements}</main>
 		</>
 	);
 }

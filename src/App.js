@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Photos from "./pages/Photos";
 import Cart from "./pages/Cart";
-import Favorites from "./pages/Favorites";
 import "./App.css";
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
 			<Routes>
 				<Route exact path="/" element={<Photos />} />
 				<Route path="/cart" element={<Cart />} />
-				<Route path="/favorites" element={<Favorites />} />
 			</Routes>
 		</div>
 	);
