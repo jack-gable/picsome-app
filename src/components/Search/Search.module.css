@@ -12,15 +12,18 @@
 	column-gap: 5px;
 }
 
-.searchLine {
-	background: none;
-	border: none;
-	font-size: 20px;
+.btn {
+	opacity: 0.85;
+	border: 1px solid var(--black);
+	border-radius: 25px;
+	font-size: 0.8rem;
+	height: 30px;
+	align-self: center;
 }
 
-.searchLine:hover,
-.searchLine:focus {
-	transform: scale(1.2);
+.btn:hover,
+.btn:focus {
+	transform: scale(1.1);
 }
 
 .searchSelect {
@@ -28,4 +31,5 @@
 	align-self: center;
 	border: 1px solid var(--black);
 	border-radius: 5px;
+	height: 30px;
 }

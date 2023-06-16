@@ -14,12 +14,29 @@ function PhotosProvider({ children }) {
 		accessKey: API_KEY,
 	});
 
+	React.useEffect(() => {
+		const getPics = async () => {
+			try {
+				const res = await api.search.getPhotos({
+					query: "random",
+					page: Math.random() * 10,
+				});
+				setAllPhotos(res.response.results);
+			} catch (err) {
+				console.log("Something went wrong");
+			}
+		};
+
+		getPics();
+	}, []);
+
 	const searchPics = async (e) => {
 		e.preventDefault();
 
 		try {
 			const res = await api.search.getPhotos({
 				query: searchTerm,
+				per_page: searchSize,
 			});
 			setAllPhotos(res.response.results);
 		} catch (err) {
@@ -28,7 +45,7 @@ function PhotosProvider({ children }) {
 
 		setSearchTerm("");
 	};
-	//TODO: switch to json of data of products instead of unsplash api
+
 	function addToCart(newItem) {
 		setCartItems((prevItems) => [...prevItems, newItem]);
 	}

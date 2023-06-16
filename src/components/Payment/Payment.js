@@ -4,7 +4,7 @@ import styles from "./Payment.module.css";
 
 function Payment() {
 	return (
-		<div>
+		<div className={styles.wrapper}>
 			<div className={`${styles.container}`}>
 				<button className={`${styles.appleBtn}`}>
 					<RiAppleFill />
@@ -44,8 +44,10 @@ function Payment() {
 						name="card"
 						placeholder="1234 1234 1234 1234"
 					/>
-					<input id="card-date" type="text" name="card" placeholder="12/24" />
-					<input id="card-code" type="text" name="card" placeholder="123" />
+					<div className={styles.flex}>
+						<input id="card-date" type="text" name="card" placeholder="12/24" />
+						<input id="card-code" type="text" name="card" placeholder="123" />
+					</div>
 				</div>
 				<div className={`${styles.inputContainer}`}>
 					<label htmlFor="country-input">Country or region</label>

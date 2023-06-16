@@ -9,17 +9,23 @@ function Search() {
 	return (
 		<form onSubmit={searchPics}>
 			<div className={`${styles.searchContainer}`}>
-				<select
-					className={`${styles.searchSelect}`}
+				<input
+					className={`${styles.search}`}
 					value={searchTerm}
 					onChange={(event) => setSearchTerm(event.target.value)}
+					placeholder="i.e. bicycles"
+				/>
+				<select
+					className={`${styles.searchSelect}`}
+					value={searchSize}
+					onChange={(event) => setSearchSize(event.target.value)}
 				>
-					<option value={"shoes"}>Shoes</option>
-					<option value={""}>50</option>
+					<option value={25}>25</option>
+					<option value={50}>50</option>
 					<option value={100}>100</option>
 				</select>
-				<button className={`${styles.searchLine}`} type="submit">
-					<RiSearch2Line />
+				<button className={`${styles.btn}`} type="submit">
+					Search <RiSearch2Line />
 				</button>
 			</div>
 		</form>
@@ -27,5 +33,3 @@ function Search() {
 }
 
 export default Search;
-
-//TODO: switch search select to have products categories and add filter for price and stars

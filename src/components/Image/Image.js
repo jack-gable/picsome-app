@@ -54,6 +54,7 @@ function Image({ className, img }) {
 			>
 				{img.user.name}
 			</a>
+			{hovered && <p className={styles.price}>$5.99</p>}
 			{cartIcon()}
 		</div>
 	);

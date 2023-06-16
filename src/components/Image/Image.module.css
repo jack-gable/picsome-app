@@ -8,22 +8,9 @@
 	position: relative;
 }
 
-.favorite {
-	color: var(--red);
-	font-size: 1.2rem;
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	cursor: pointer;
-}
-
-.heartFill {
-	opacity: 0.7;
-}
-
 .cart {
 	color: var(--blue);
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 	position: absolute;
 	top: 5px;
 	right: 5px;
@@ -38,4 +25,13 @@
 	position: absolute;
 	bottom: 5px;
 	left: 5px;
+}
+
+.price {
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	right: 5px;
+	font-size: 12px;
+	text-shadow: 1px 1px #555555;
 }
